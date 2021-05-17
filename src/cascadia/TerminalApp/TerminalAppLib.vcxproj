@@ -311,6 +311,18 @@
       <Project>{CA5CAD1A-039A-4929-BA2A-8BEB2E4106FE}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="$(OpenConsoleDir)\src\cascadia\TerminalControl\dll\TerminalControl.vcxproj">
+      <Project>{ca5cad1a-f542-4635-a069-7caefb930070}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="$(OpenConsoleDir)\src\cascadia\TerminalSettingsEditor\Microsoft.Terminal.Settings.Editor.vcxproj">
+      <Project>{ca5cad1a-0b5e-45c3-96a8-bb496bfe4e32}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="$(OpenConsoleDir)\src\cascadia\TerminalSettingsModel\dll\Microsoft.Terminal.Settings.Model.vcxproj">
+      <Project>{ca5cad1a-082c-4476-9f33-94b339494076}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <!-- For whatever reason, we can't include the TerminalControl and
     TerminalSettings projects' winmds via project references. So we'll have to
     manually include the winmds as References below -->

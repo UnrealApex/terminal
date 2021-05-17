@@ -63,6 +63,10 @@
     <ProjectReference Include="$(OpenConsoleDir)src\cascadia\TerminalConnection\TerminalConnection.vcxproj" />
     <ProjectReference Include="$(OpenConsoleDir)\src\cascadia\TerminalApp\dll\TerminalApp.vcxproj" />
     <ProjectReference Include="$(OpenConsoleDir)\src\cascadia\TerminalSettingsModel\dll\Microsoft.Terminal.Settings.Model.vcxproj" />
+    <ProjectReference Include="$(OpenConsoleDir)\src\cascadia\TerminalSettingsModel\Microsoft.Terminal.Settings.ModelLib.vcxproj">
+      <Project>{ca5cad1a-d7ec-4107-b7c6-79cb77ae2907}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
 
   <!-- ========================= Globals ======================== -->
@@ -94,7 +98,7 @@
     <!-- From Microsoft.UI.Xaml.targets -->
     <Native-Platform Condition="'$(Platform)' == 'Win32'">x86</Native-Platform>
     <Native-Platform Condition="'$(Platform)' != 'Win32'">$(Platform)</Native-Platform>
-    <_MUXBinRoot>&quot;$(OpenConsoleDir)packages\Microsoft.UI.Xaml.2.5.0-prerelease.201202003\runtimes\win10-$(Native-Platform)\native\&quot;</_MUXBinRoot>
+    <_MUXBinRoot>"$(OpenConsoleDir)packages\Microsoft.UI.Xaml.2.5.0-prerelease.201202003\runtimes\win10-$(Native-Platform)\native\"</_MUXBinRoot>
   </PropertyGroup>
 
 <!-- We actually can just straight up reference MUX here, it's fine -->

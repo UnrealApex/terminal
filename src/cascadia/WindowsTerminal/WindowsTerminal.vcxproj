@@ -22,7 +22,7 @@
 
   <Import Project="..\..\..\common.openconsole.props" Condition="'$(OpenConsoleDir)'==''" />
   <Import Project="$(OpenConsoleDir)src\cppwinrt.build.pre.props" />
-  
+
   <ItemDefinitionGroup>
     <ClCompile>
       <SDLCheck>true</SDLCheck>
@@ -84,6 +84,14 @@
     <ProjectReference Include="$(OpenConsoleDir)src\cascadia\TerminalSettingsEditor\Microsoft.Terminal.Settings.Editor.vcxproj" />
 
     <ProjectReference Include="$(OpenConsoleDir)src\types\lib\types.vcxproj" />
+    <ProjectReference Include="$(OpenConsoleDir)src\host\exe\Host.EXE.vcxproj">
+      <Project>{9cbd7dfa-1754-4a9d-93d7-857a9d17cb1b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="$(OpenConsoleDir)src\cascadia\TerminalCore\lib\TerminalCore-lib.vcxproj">
+      <Project>{ca5cad1a-abcd-429c-b551-8562ec954746}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
 
   <!-- Manually add a reference to Core here. We need this so MDMERGE will know
@@ -143,8 +151,8 @@
       BuildInParallel="$(BuildInParallel)"
       Properties="%(ProjectReferenceWithConfiguration.SetConfiguration); %(ProjectReferenceWithConfiguration.SetPlatform)"
       Condition="'@(ProjectReferenceWithConfiguration)' != ''
-                 and '%(ProjectReferenceWithConfiguration.BuildReference)' == 'true'
-                 and '%(ProjectReferenceWithConfiguration.ReferenceOutputAssembly)' == 'true'"
+                and '%(ProjectReferenceWithConfiguration.BuildReference)' == 'true'
+                and '%(ProjectReferenceWithConfiguration.ReferenceOutputAssembly)' == 'true'"
       ContinueOnError="$(_ContinueOnError)">
       <Output TaskParameter="TargetOutputs" ItemName="_PackagingOutputsFromOtherProjects"/>
     </MSBuild>
@@ -174,4 +182,3 @@
   <Import Project="$(OpenConsoleDir)\build\rules\GenerateSxsManifestsFromWinmds.targets" />
   <Import Project="..\..\..\packages\Terminal.ThemeHelpers.0.2.200324001\build\native\Terminal.ThemeHelpers.targets" Condition="Exists('..\..\..\packages\Terminal.ThemeHelpers.0.2.200324001\build\native\Terminal.ThemeHelpers.targets')" />
 </Project>
-

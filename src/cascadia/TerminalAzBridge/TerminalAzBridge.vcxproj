@@ -42,6 +42,10 @@
       <Project>{CA5CAD1A-44BD-4AC7-AC72-6CA5B3AB89ED}</Project>
     </ProjectReference>
     <ProjectReference Include="$(OpenConsoleDir)src\types\lib\types.vcxproj" />
+    <ProjectReference Include="$(OpenConsoleDir)src\cascadia\TerminalControl\TerminalControlLib.vcxproj">
+      <Project>{ca5cad1a-44bd-4ac7-ac72-6ca5b3ab89ed}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
 
   <!--
